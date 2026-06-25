@@ -1,0 +1,75 @@
+--- Sample conversation: multi-turn itinerary planning ---
+Demonstrates: progressive context gathering, proactive date questions, plan-offer
+gate (asks before generating), CoT itinerary with live attraction data from Overpass API.
+
+You: I want to visit Barcelona with my partner. We both love food and architecture.
+
+Assistant: Barcelona is a fantastic pick for a couple who love food and architecture. A few quick questions to make sure I tailor this well:
+
+- When are you thinking of going, and how many days do you have?
+- Do you prefer a relaxed pace (one or two areas per day) or do you like to pack a lot in?
+- Any dietary constraints I should factor in when thinking about the food side?
+
+You: We are thinking late September, maybe 5 days. Relaxed pace. No dietary restrictions.
+
+Assistant: Got it -- 5 days in Barcelona in late September, relaxed pace, couple trip focused on food and architecture. Do you have specific travel dates, or is late September still flexible? Knowing the exact dates lets me pull accurate weather forecasts for you.
+
+You: Let's say September 22 to 27.
+
+Assistant: Perfect, September 22-27 confirmed. September in Barcelona is warm and mostly dry -- typically 22-26C, low humidity, ideal for walking the city. I fetched the 7-day forecast and the first few days of your trip look clear with highs around 25C, cooling slightly toward the 26th.
+
+[tool call: get_weather(city=Barcelona, start_date=2025-09-22)]
+[result: avg_high=25C, avg_low=18C, precipitation_chance=10%, conditions=Sunny to partly cloudy]
+
+[tool call: get_attractions(city=Barcelona, interests=[food, architecture])]
+[result: Sagrada Familia, Palau de la Musica Catalana, Parc Guell, Casa Batllo, Gothic Quarter, Barceloneta Market, Boqueria area, El Born neighbourhood, Montjuic, Picasso Museum]
+
+Want me to draft a day-by-day itinerary for the 5 days? I can cluster activities by neighbourhood to keep the pace relaxed.
+
+You: Yes please!
+
+Assistant: Here is a relaxed 5-day plan grouped by area to minimise transit time:
+
+Day 1 -- Eixample (Architecture day)
+Morning: Sagrada Familia -- book a tower ticket in advance, allow 2-2.5 hours.
+Afternoon: Walk Passeig de Gracia to see Casa Batllo and Casa Mila (La Pedrera) facades; the street itself is worth the stroll.
+Evening: Dinner in Eixample -- the neighbourhood has a high density of well-regarded restaurants. Look for a table at a spot with a blackboard menu (usually signals fresh daily dishes).
+
+Day 2 -- Gothic Quarter and El Born
+Morning: Gothic Quarter on foot -- the Barri Gotic is best before 10am before tour groups arrive. Cathedral, Pont del Bisbe, Placa Reial.
+Afternoon: Cross into El Born -- Palau de la Musica Catalana (book ahead), then wander the streets around it.
+Evening: El Born has a strong food scene; pintxos bars along Carrer del Parlament are a good option for a lighter evening.
+
+Day 3 -- Gracia and Park Guell
+Morning: Park Guell -- go early (tickets are timed, buy online). The monumental zone with the mosaic terrace is the highlight.
+Afternoon: Walk down into Gracia neighbourhood -- local, quieter, good for coffee and browsing independent shops.
+Evening: Back to Eixample or try a restaurant in Gracia itself.
+
+Day 4 -- Barceloneta and waterfront
+Morning: Barceloneta market for a slow breakfast, then walk the waterfront to the Olympic Port.
+Afternoon: Montjuic by cable car or funicular -- Fundacio Joan Miro if contemporary art interests you, or just the castle and views.
+Evening: Seafood dinner in Barceloneta. Note: I cannot name specific restaurants without live data, but the blocks one street back from the beach tend to have better value than the beachfront row.
+
+Day 5 -- Buffer and revisit
+Use this day to revisit anything from earlier in the trip, do a cooking class (widely available in the Gothic Quarter), or take a half-day trip to Montserrat (about 1 hour by train from Placa Espanya).
+
+A few practical notes:
+- Book Sagrada Familia, Park Guell, and Palau de la Musica well in advance -- they sell out.
+- The T-Casual metro card (10 trips) is the most economical way to get around.
+- Late September weather is reliable, but pack a light layer for evenings.
+
+You: Can you add a morning market visit to day 2?
+
+Assistant: Sure. Updated Day 2:
+
+Day 2 -- Gothic Quarter, market, and El Born
+Early morning (8-9am): Mercat de Santa Caterina in El Born -- smaller and less crowded than Boqueria, excellent for fresh fruit, local produce, and a coffee at the market bar.
+Mid-morning: Gothic Quarter on foot -- aim to be in the Barri Gotic by 10am before it fills up. Cathedral, Pont del Bisbe, Placa Reial.
+Afternoon: Palau de la Musica Catalana (book ahead), then the El Born streets.
+Evening: Pintxos bars in El Born for a relaxed dinner.
+
+Everything else on the day stays the same.
+
+You: Perfect, thanks.
+
+Assistant: Enjoy Barcelona -- September is one of the best times to visit. Let me know if you want packing suggestions or any other details before you go.

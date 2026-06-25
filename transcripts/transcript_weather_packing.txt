@@ -1,0 +1,58 @@
+--- Sample conversation: weather query and packing advice ---
+Demonstrates: weather tool integration, data-vs-knowledge blending,
+packing recommendations tailored to forecast + destination.
+
+You: I'm heading to Tokyo in mid-November for 10 days. What will the weather be like?
+
+Assistant: Mid-November in Tokyo is one of the nicer times to visit -- autumn foliage is usually at its peak. To give you an accurate forecast I need your exact dates. Do you have them?
+
+You: November 12 to 22.
+
+[tool call: get_weather(city=Tokyo, start_date=2025-11-12)]
+[result: avg_high=16C, avg_low=8C, precipitation_chance=20%, conditions=Mostly clear, occasional light rain]
+
+Assistant: Here is what the forecast shows for your dates:
+
+- Highs around 15-17C, lows around 7-9C -- chilly but not cold.
+- Mostly clear with a 20% chance of light rain on a couple of days (common in November).
+- Humidity is low in November, so it feels crisper than the numbers suggest.
+
+This is a comfortable range for walking -- you will not need a heavy winter coat, but you will want layers. Want me to put together a packing list based on this?
+
+You: Yes, that would be great.
+
+Assistant: Packing list for 10 days in Tokyo in mid-November:
+
+Clothing:
+- 3-4 mid-layer tops (long sleeve, light sweater)
+- 1 warmer sweater or fleece for evenings -- temperatures drop noticeably after dark
+- A light-to-medium weight jacket (not a winter coat -- a good wool or synthetic layer is enough)
+- Comfortable walking shoes with good soles -- Tokyo involves a lot of walking and the subway involves a lot of stairs
+- 1 pair of smart-casual shoes if you plan on nicer restaurants
+- Slip-on shoes are practical -- many traditional sites and some ryokan require removing footwear
+
+Rain:
+- A compact fold-up umbrella (or pick one up at a convenience store in Tokyo for a few hundred yen -- they stock excellent ones)
+- Light waterproof layer is optional but useful if you plan outdoor parks days
+
+General:
+- Power adapter (Japan uses Type A plugs, 100V -- most modern devices handle this fine)
+- IC card top-up for transit (Suica or Pasmo) -- load it at the airport
+- Cash -- Japan remains heavily cash-based outside central tourist areas
+- A small day bag for walking; lockers are available at most major stations for larger bags
+
+You: Will it be warm enough for Nikko in late November?
+
+Assistant: Nikko is about 120km north of Tokyo and sits at higher elevation, so it runs 3-5C cooler than central Tokyo. On your last few days (November 20-22) you might see highs of 10-12C in Nikko and lows close to freezing overnight.
+
+If you are going for the day -- which is the most common approach -- you will be fine with the layers already on your packing list. Add a thermal base layer if you run cold. The autumn colours at Nikko typically peak slightly earlier than Tokyo (late October to mid-November), so by the 20th the foliage may be past peak but the temples and cedar forests are still worth the trip.
+
+You: Thanks. Any suggestions for getting there?
+
+Assistant: The standard route is the Tobu Nikko Line from Asakusa station in Tokyo -- about 2 hours on the limited express (Spacia or Revaty trains). It is significantly cheaper than taking a Shinkansen to Utsunomiya and connecting, and the Tobu trains run directly to Nikko station.
+
+A day trip ticket (Tobu Nikko All Area Pass) covers the round trip plus local buses within Nikko, which is useful since the main shrine complex is a 30-minute bus ride from the station.
+
+You: Perfect, this is really helpful.
+
+Assistant: You are all set. November is a great month for both Tokyo and Nikko -- the cooler air and autumn colours make it one of the most scenic times of year. Let me know if you want help planning the Tokyo days themselves.

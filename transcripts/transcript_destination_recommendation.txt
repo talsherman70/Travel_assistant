@@ -1,0 +1,65 @@
+--- Sample conversation: destination recommendation ---
+Demonstrates: constraint handling (climate preference, group type),
+multi-turn refinement, hallucination guardrails (no fabricated specifics).
+
+You: I need a destination recommendation for a solo trip. Somewhere cold, maybe a week.
+
+Assistant: A few things that will help me narrow it down:
+
+- What time of year are you thinking?
+- What draws you to cold destinations -- winter landscapes, skiing, northern lights, city culture?
+- Any budget level in mind (budget, mid-range, or flexible)?
+
+You: February. I like dramatic scenery and I'm not a skier. Mid-range budget.
+
+Assistant: Given dramatic winter scenery without skiing, and a February window, here are three directions worth considering:
+
+Iceland -- The classic choice for February. Glacier hikes, black sand beaches, ice caves (only accessible in winter), and the best conditions for northern lights. Reykjavik is a manageable base for day trips. February is off-peak so prices are lower than summer, though flights from most origins are not cheap.
+
+Faroe Islands -- Less visited than Iceland, dramatically rugged, February is genuinely remote and quiet. Grass-roofed villages, sea cliffs, and almost no crowds. Worth considering if you want somewhere that feels truly off the beaten path.
+
+Norwegian fjords (Bergen or Flam area) -- Snow-covered fjords in February are striking. The Flam Railway is one of the most scenic train routes in Europe and runs year-round. Bergen has a compact, walkable old town. Prices are higher than Iceland but the infrastructure is excellent.
+
+Any of these feel like the right direction, or should I steer toward a completely different region?
+
+You: Iceland sounds great. Can you tell me more?
+
+[tool call: get_attractions(city=Reykjavik, interests=[scenery, nature, culture])]
+[result: Golden Circle route, Blue Lagoon area, Jokulsarlon glacier lagoon, Landmannalaugar (winter access limited), Hallgrimskirkja, Harpa concert hall, Reykjanes Peninsula, whale watching (seasonal)]
+
+Assistant: Iceland in February breaks down well for a week:
+
+What works well in February:
+- Ice caves inside Vatnajokull glacier -- these are only accessible November to March before they melt. They are genuinely impressive and most day tours depart from Jokulsarlon.
+- Golden Circle (Thingvellir, Geysir, Gullfoss waterfall) -- all accessible by day tour from Reykjavik, full-day.
+- Reykjanes Peninsula -- volcanic landscape, geothermal fields, accessible year-round. The peninsula became more active after recent eruptions, so check current status before visiting lava fields.
+- Reykjavik itself -- compact and walkable. Hallgrimskirkja church for the views, Harpa concert hall on the waterfront, the old harbour area.
+- Northern lights -- February gives you 14+ hours of darkness. No guarantees (cloud cover is the main variable), but your odds are reasonable over a week.
+
+Practical notes:
+- A rental car is the most flexible option if you are comfortable driving in winter conditions (studded tyres are standard). Otherwise, day tours from Reykjavik cover most highlights.
+- February temperatures hover around 0-3C in Reykjavik, colder inland. Waterproof outer layers and thermal base layers are essential.
+- Book ice cave tours well in advance -- they sell out in February.
+
+You: What about food? What should I eat?
+
+Assistant: Icelandic food worth trying:
+
+Traditional:
+- Lamb -- Iceland has free-range lamb that is genuinely distinctive. It appears on most menus and is usually the best value way to eat well.
+- Skyr -- thick Icelandic dairy product, somewhere between yogurt and soft cheese. Every supermarket sells it, good for breakfast.
+- Plokkfiskur -- Icelandic fish stew, a traditional working-class dish, warming and good in winter.
+- Kleinur -- twisted fried dough pastry, a classic Icelandic snack available at bakeries.
+
+Worth knowing:
+- Reykjavik has a good restaurant scene for a city its size, with strong fish and lamb options. Prices are high by most standards -- budget 3,000-5,000 ISK (~20-35 EUR) per main at a mid-range spot.
+- Supermarkets (Bonus, Kronan) are significantly cheaper for breakfast and lunch supplies.
+- The hot dog stands (Pylsur) are an Icelandic institution and genuinely good -- the classic order is with everything (remoulade, raw onion, crispy onion, ketchup, mustard).
+
+I cannot name specific restaurants without live data, but searching for Reykjavik restaurants by neighbourhood (the old harbour and Laugavegur street area have the highest concentration) will give you current options.
+
+You: This is exactly what I needed. I think I will go for it.
+
+Assistant: Iceland in February is a genuinely excellent call -- the combination of ice caves, potential northern lights, and winter landscapes is hard to match anywhere else at that time of year. Book the ice cave tour as soon as you have your flights confirmed; those fill up fast.
+
+Let me know if you want help building a day-by-day plan once your dates are set.
