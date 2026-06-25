@@ -43,6 +43,8 @@ Copy `.env.example` to `.env` and fill in:
 
 > **Token warning:** every conversation turn makes two LLM calls (intent extraction + response generation). Token usage accumulates quickly during long conversations or `/eval` runs. Monitor your usage at platform.deepseek.com.
 
+Weather data comes from the **Open-Meteo API** — no API key required.
+
 Attraction data comes from the **Overpass API** (OpenStreetMap) — no API key required.
 
 ---
